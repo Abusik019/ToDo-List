@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <h1>Github ToDo list</h1>
+  <div class="todo">
+    <ul id="todo_list" class="todo_list"></ul>
+    <div class="input_container" id="input_container">
+      <div class="input_body" id="input_body">
+        <input type="checkbox" id="todo_checkbox" style="pointer-events: none;">
+        <input type="text" placeholder="New ToDo" id="input_todo">
+      </div>
+      <div class="todoList_item_right">
+        <button id="add_todo" class="add_todo"><img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEP0lEQVR4nO1az48URRQu4k+CUUFAj3o0GvWfUPyBCiZ7wB/xAuNOV3XX+7o3YS/YnoUTiYl/h4YQIGJI1IAgwkWQhZPKwYA3EaME83W/GibuDDszWzPTs+ElnfRu1VTVV/Xeq/e+18bckzUqADY573c4YL8TOWSBi07kDyvyNx99v8A29klE3m4vLm40TZAPy/LhROQDJ3LUitxywO0hn38tcMQB76dp+tDEAQBY74DCAlfDoixw04ocdyL7eDJt75/ljrdarQf48J3/Y5sFPnbA1/xNB5TIbzbPc27OREA4kTcccKVrV09bkd2tvXsfG3Ys7/3jDthjRc50NkTksvP+tbGqkRX5vAvAD6nIK7HGT4BXHfBjF6DPop9OsrDwFBeuk/xpRdK5ubn7ok5ijOGYVsRbkRvhtLMsezLK4K4onqmOu96lC1mWPW/GLO0se8GJ/Ky2s8Q1rGrANE23dAYEvm/l+WYzIWkvLm60wDc69xVqxUgDUT+71Om7oig2mAlLURQbHHAyqNlINhMMm+rEy24sKx1kHdY+EbSCDmAUF1sZ9iRsYhCbseoA6N2Gueyqe4LeabWLCO50teNYQILxD6RiVmQh3BMxXGwsIGVZ3m9FzmkUIXftzHiHoULVOc9fNhEkFhBKAryuQK7e9VQYvAUPYSJJTCDGmHXBk1rg3b69LHBMbWN3Q4EYB3yktnK4fz5Rh9U3RwkAJwWkzYuyznH+6blOC+zUI/vKRJTYQCgOOMExU5E3zf/FihzQI9tnGg7EAp+oCXy6fMI6BaW3emsGgOxU7fmiV+MlNjKLazqQROQ5BXJxWaMVuc7G2HHVOIC08nyzAvl9WWPFdAC3y7J8cNDFjesxK0h1cStPsKaBXJ8V1UqZ8PVVrbVi7E7dLxnAxl+I3r/T3/3qhUjybLYvRF/xtmw8Pishis3z7T2DsRA0kgFsKhAAm0LQmKbpoz07KaHMifc0FYgVmdeY8FDfTqnIe6peZ5qaWFmRs9WY3u9aKdX9tQLj/bamAbF5vl0d0i8rliFI7eupnG0a+eCA8zpeNijrHrhe3xQgVjeYZN3ARSHWJxTIDZJjZsqSeP+SE/lLs8LhShmkJ8MOkLY0U5K0JtKX9GQPjkpin9YBTk6DxE6S5BErckq149TIdUbuRlWd1bIC/zYTEtQX37cK4vKqCz4ssnSOtmbFXzSTsYkldbWXvPdPRxmYuxHUjA6A3CvdoYksJfldeic1bKrTfFFsjTqJuuXaAdSTnItYfV2npYzzXZniwbHW3qvq6x0vUrH2pDFH+YpB7WC+E3agVqWY1eKVT4f1Cg1n9ISY859wIiV5J2ZxdNvkAPjwnUWjKikSKdk38AQh7HBANpUvIDgpWXESykwBhiUZGIpXman3u6YCoJeQUCYXy6zNiXxZfUADXOt8VANcc8BPTE/Zh3375hP3xMy+/AfPdygOifU+ZAAAAABJRU5ErkJggg=="></button>
+      </div>
+    </div>
+    <button id="table_btn"><img width="24" height="24" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABHUlEQVR4nO2YMW6DQBBFX+5hKOJbBF8oQqlsyQVuHflIDrmKyyQXcBFv441GokARa69BhNl4nvSbBaH57MwODBiG8S/JgRpwgO+QrL8BGUp5DwT+W2JCJS7SwAml+Jb6XE/WwCvwHbl7t0ieuR3bwANwHCF43+g4tgGat5TsDqjCpX4K1ZEG9igla5rUpU4swc+mDtTQzAJYAesOyXqBYl6A85UCluslSvmKPIXkPpX4lnYdUt/IfM9OPAeWgboZoiXw+BcGDiN+zB3MQMQOyDZXgboZompICnXlpPoi/ozMyw+UUkY2smcUUwCbQE7K+tPUARqayW20ODEu9Z96n/pYxfc0YKNFwulqo8WkasClfgrVkQZstGgYxp3zA6ro3gDE5a2vAAAAAElFTkSuQmCC"></button>
+    <div class="table_container" id="table_container">
+      <div class="table_container-body">
+        <h2>List table</h2>
+        <button id="close_btn">&#10006;</button>
+        <table id="table" class="table">
+          <tr>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="git">
+    <p>Abusik019</p>
+    <div><a href="https://github.com/Abusik019"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAAAsTAAALEwEAmpwYAAADlklEQVR4nO2aS0hVQRjHfz3MspdpSTejqLRCMQjEXVERhQW9DEIjMrIXZLbpuSh3URRp0C6iRYtWtWgRRpsgE5MeS1OKaNFT7WUPTSsG5sLtcM89M3POmXuj84PZXOZ88//fM3fmm28uRERERET8v0wHaoBmoAXoBvqAQdn65Gctsk+1fOafIh84AHQAvw3bA6BexspYZgJNwFcfRp2tHzgPFJJBZAENwJcAjTqb+BIbgex0m10APAnRqLM9Buany2xVyG/VrX0GNto2Wwv8TIPZeBsC9toyuyeNRp1NrOShT+OhDDCa+KY3hGW2CPiUASadTawjC4M2O0ZhNT4DTAAWAceB1wGYeQUcA8pk7LMu/R7J7TEwjiqIK3U8ky33zmHDqXoyyb5bluKZQ0GZLZQZj5fIPJfn1wNdwGVgG1AOzAJyZJsNVADbgSsyt17nEmuqx9SOBWG4SfGtjCV8xnloOOd3gHyN3Hgu4VPkoaHf74GjXuN3t5LwWa2gY7+fATo0DJ8gfBoVdLSbBo8BvzQM1xE++xR0CM0FJsGrNcxewx43FPRsMQncrGj2uzz820IsjgMemkTRQJsWRcOXsM9VD023TII+UzS8BvtUeWgSyYs2vYqGA8luDKZ1Kk3vTYIOKK6Io7BPjoeuHyZBBxXf8GTsE/PQJLRr80HRsPOUZINyD01CuzbdioZFidY2Rzw0PTUJelvRcBt2GSHLtak0Ce3aqCYeom3CHlsV9JwyCVyjYfgdUIyd4+FbBT2VJsFnaB4eukK+FSgBniuWhyaZDtKuYTh+K1AX8N48Wp6SVAsR9/0M1qBpOPFt75Y1KFMKpFHVFDfexK2IMVOAb4am49PrHnBaChHT0o0S2Uf0bTWsdvbIulcoRbwKYC3QqbF9FXpkT20+vtx4bdw3MZcybaf8e0KeQpFeTPFcxRn10tBsj8+f0F8cdhnkesLvrSuFmKWos8LQcKAlpizgYZJBxLa1WPaZI4sG/QmF8ReyuK5Lq6ZZ0X8kAVMstx3nYBeCHgjYoZn0hFYTr0xyES5OJuMDHqdU0aw4sy8jZHYlycAuBjxGtoLZYZlXW2Fnkovxm8ByxdVYBa9K6WYss0qxSGCKWzxRa1tCmpinkCyYkizWHUuXdp7J/UHgY4iGe2XaKQ7/GcM0efB2bl2miGffyEu6wDKoMJgoV/K7cmHLNZw1tZnwV0Nd8mQNOSIiIiIiAm/+AD7o8u7sS+G2AAAAAElFTkSuQmCC"></a></div>
+  </div>
+  <script src="./script.js" type="module"></script>
+</body>
+
+</html>
